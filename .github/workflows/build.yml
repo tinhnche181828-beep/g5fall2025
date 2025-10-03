@@ -39,6 +39,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
         with:
-          args: >
-            -Dsonar.projectKey=SWP391_Group5_TutorManagement
-            -Dsonar.organization=your-org-name
+  args: >
+    -Dsonar.projectKey=demogit
+    -Dsonar.sources=.
+
