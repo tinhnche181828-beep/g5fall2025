@@ -16,11 +16,15 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v4
+      # Bước 1: Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0  # tránh shallow clone để phân tích tốt hơn
 
-- name: SonarQube Scan
+      # Bước 2: Chạy SonarQube Scan
+      - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
